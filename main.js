@@ -1,6 +1,9 @@
-let input = document.querySelector(".input");
-let submit = document.querySelector(".add");
-let tasksDiv = document.querySelector(".tasks");
+let input = document.getElementsByClassName("input")[0];  //edited
+let submit = document.getElementsByClassName("add")[0];
+let taskForm = document.getElementsByClassName("task-form")[0];
+let tasksDiv = document.getElementsByClassName("tasks")[0]; //added
+
+
 
 //Empty array for storing the tasks
 let arrayOfTasks = [];
@@ -49,12 +52,16 @@ function handleSubmitClick(){
         console.log(JSON.stringify(arrayOfTasks));
     }
 } 
-submit.onclick = handleSubmitClick;
+taskForm.addEventListener("submit", (e) => {   //edited
+    e.preventDefault(); //no page reload 
+    handleSubmitClick();
+})
+//submit.onclick = handleSubmitClick; 
 
 //Add Tasks To Page
 function addElementsToPageFrom(arrayOfTasks){
     // Empty Tasks Div 
-    tasksDiv.innerHTML = "";
+    tasksDiv.innerHTML = "";   //tasksDiv or taskForm
     // Looping On Array Of Tasks
     arrayOfTasks.forEach(task => {
         //Create Main Div
