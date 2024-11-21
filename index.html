@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="form">
-        <input type="text" class="input" />
-        <input type="submit" class="add" value="Add Task" />
-      </div>
+    <div class="container"> 
+        <!-- Form for adding tasks -->
+      <form class="task-form">  <!---->
+        <input type="text" class="input" required/> <!---->
+        <button type="submit" class="add" >Add Task</button> <!---->
+      </form>
+        <!-- Div for displaying tasks -->
       <div class="tasks"></div>
     </div>
     <script src="main.js"></script>
